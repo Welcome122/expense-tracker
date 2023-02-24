@@ -28,7 +28,8 @@ const balance = document.getElementById(
   
   //5
   //Add Transaction
-  function addTransaction(e){
+  async function addTransaction(e){
+    try{
     e.preventDefault();
     if(text.value.trim() === '' || amount.value.trim() === ''){
       alert('please add text and amount')
@@ -48,12 +49,24 @@ const balance = document.getElementById(
       amount.value='';
     }
   }
-  
+  catch(err)
+  {
+    console.log(err)
+  }
+  }
+
+
   
   //5.5
   //Generate Random ID
-  function generateID(){
+ async function generateID(){
+  try{
     return Math.floor(Math.random()*1000000000);
+  }
+  catch(err)
+  {
+    console.log(err);
+  }
   }
   
   //2
